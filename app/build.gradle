@@ -1,0 +1,102 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.1"
+    defaultConfig {
+        applicationId "com.github.demo"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    androidExtensions {
+        experimental = true
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+        }
+
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://api.github.com/\"")
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "androidx.test.espresso:espresso-intents:3.2.0"
+// Android Support Library
+    implementation "androidx.appcompat:appcompat:$rootProject.ext.app_compat_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$rootProject.ext.jetpack"
+
+    implementation "com.google.android.material:material:${rootProject.ext.materialDesign}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ext.jetpack}"
+
+    implementation "com.google.dagger:dagger:$rootProject.ext.dagger"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger"
+
+    testImplementation "org.mockito:mockito-core:$mockito_version"
+    androidTestImplementation "com.squareup.okhttp3:mockwebserver:$okhttp_version"
+    kaptTest "com.google.dagger:dagger-compiler:$dagger"
+    testImplementation "android.arch.core:core-testing:$core_testing_version"
+    testImplementation "org.hamcrest:hamcrest-library:$hamcrest_version"
+
+    implementation "com.google.code.gson:gson:$gson_version"
+
+    // Reactive
+    implementation "io.reactivex.rxjava2:rxjava:$rootProject.rxjava_version"
+    implementation "io.reactivex.rxjava2:rxandroid:$rootProject.rxandroid_version"
+
+    // Networking
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    implementation "com.squareup.okhttp3:okhttp:$okhttp_version"
+    implementation "com.squareup.okhttp3:logging-interceptor:$okhttp_version"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+
+    // Image
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+
+    // ViewModel and LiveData
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    // Lifecycle Annotations
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    //MarkDownView
+    implementation 'com.github.tiagohm.MarkdownView:library:0.19.0'
+    implementation 'com.github.tiagohm.MarkdownView:emoji:0.19.0'
+
+    // Database
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    debugImplementation 'com.amitshekhar.android:debug-db:1.0.6'
+}
+

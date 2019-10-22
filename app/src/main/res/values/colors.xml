@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00ACC1</color>
+    <color name="colorPrimaryDark">#00ACC1</color>
+    <color name="colorAccent">#00ACC1</color>
+    <color name="fadeGray">#929292</color>
+    <color name="white">#fff</color>
+    <color name="dark">#090A0C</color>
+
+    <color name="color_primary">#00ACC1</color>
+    <color name="color_primary_variant">#C2C2C2</color>
+    <color name="color_on_primary">#090A0C</color>
+    <color name="color_secondary">#768FFF</color>
+    <color name="color_secondary_variant">#3C62CB</color>
+    <color name="color_on_secondary">#090A0C</color>
+    <color name="color_error">#FF7961</color>
+    <color name="color_on_error">#090A0C</color>
+    <color name="color_surface">#15181D</color>
+    <color name="color_on_surface">#FFFFFF</color>
+    <color name="color_background">#090A0C</color>
+    <color name="color_on_background">#00ACC1</color>
+
+
+</resources>
