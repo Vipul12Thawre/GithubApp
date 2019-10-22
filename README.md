@@ -1,6 +1,6 @@
 # Github API App
 
-Simple app to show public github repositories repository details
+Simple app to show public github repositories list and details, also you can search repos with username
 
 ![https://raw.githubusercontent.com/Vipul12Thawre/GithubApp/master/app/arts/githubapp.png](https://raw.githubusercontent.com/Vipul12Thawre/GithubApp/master/app/arts/githubapp.png)
 
